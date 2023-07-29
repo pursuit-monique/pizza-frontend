@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Pizza Frontend Assessment
 
-[This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).](https://github.com/pursuit-monique/pizza-frontend/blob/main/indexss.jpg?raw=true)
+
+This is a Barbie-themed PERN pizza menu.
+
+Index page: (https://github.com/pursuit-monique/pizza-frontend/blob/main/indexss.png?raw=true)
 
 ## Available Scripts
 
