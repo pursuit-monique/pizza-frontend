@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import MenuCards from "./MenuCards";
 import ItemPage from "./ItemPage";
 import Error from "./Error";
+import NotFound from "./NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       try {
         setError("");
         setLoading(true);
-        const res = await fetch("http://localhost:9000/itms/");
+        const res = await fetch("http://localhost:9000/items/");
         const json = await res.json();
         const { data, error } = json;
         if (res.ok) {
@@ -52,6 +53,7 @@ function App() {
           <Routes>
             {renderContent()}
             <Route path="/item/:id" element={<ItemPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </div>
