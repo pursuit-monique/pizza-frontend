@@ -8,7 +8,7 @@ const MenuCards = ({items}) =>{
     return (
         <div className="container">
         {items.map(item =>  (
-        <Link to={`./${item.id}`}>
+        <Link to={`./item/${item.id}`}>
             <div 
         key={item.id}
         className="card radius-8"
