@@ -3,7 +3,10 @@
 
 This is a Barbie-themed PERN pizza menu.
 
-Index page: (https://github.com/pursuit-monique/pizza-frontend/blob/main/indexss.png?raw=true)
+Index page: 
+<img src="https://github.com/pursuit-monique/pizza-frontend/blob/main/indexss.png?raw=true">  </img>
+
+
 
 ## Available Scripts
 
