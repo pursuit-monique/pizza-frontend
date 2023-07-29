@@ -8,6 +8,9 @@
     margin-left: auto;
 }
 
+.errorh1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
 .genericFont{
     padding-left: 25%;
     color: white;
