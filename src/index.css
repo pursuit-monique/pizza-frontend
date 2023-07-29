@@ -1,12 +1,145 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0px;
+  margin: 0px;
+  background-color: linear-gradient(to bottom, rgb(255, 188, 225) 30%, rgb(102, 240, 240) 100%);
+  background-image: url('../public/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: blur(2px) grayscale(20%); 
+  font-family: -apple-system, 'Edu SA Beginner', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.center{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 48px;
+}
+
+ h3, h1{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Pacifico', cursive;
+ }
+
+ h1 {
+  font-size: xx-large;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: white;
+
+ }
+
+ .hero-img{
+  font-size: xx-large;
+  color: white;
+  text-align: right;
+ }
+
+ .m-8 {
+  margin: 8px;
+ }
+
+ .p-8{
+  padding: 8px;
+ }
+
+ .radius-8{
+  border-radius: 8px;
+ }
+
+.NavBar{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .8) 30%, rgba(255, 255, 255, 0.0) 100%);
+  backdrop-filter: blur(12px); 
+  color: hotpink;
+  z-index: 7;
+  position: sticky;
+  top: 0;
+}
+
+.footer{
+  height: 8vh;
+  background: rgba(50, 50, 70, 1);
+  border-top: 1px solid black;
+  backdrop-filter: blur(12px); 
+  color: hotpink;
+  z-index: 7;
+  position: sticky;
+  top: 0;
+}
+
+.hotPinkText{
+  font-family: -apple-system, 'Edu SA Beginner', cursive;
+  text-transform: capitalize;
+  color: hotpink;
+}
+
+.hotPink{
+  border: 0px solid rgb(223, 98, 204);
+  background: hotpink;
+  background-color: hotpink; 
+  color: whitesmoke;
+}
+
+.card{
+  background-color: white;
+  width: 16rem;
+  border: 4px solid black;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.card:hover{
+  border: 4px solid hotpink;
+}
+
+a{
+ color: inherit;
+ text-decoration: none;
+}
+
+.link{
+  color: black;
+  text-decoration: underline solid hotpink 2px;
+  text-decoration-color: hotpink;
+}
+
+.linkActive{
+  color: rgb(134, 134, 134);
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+  text-decoration: underline solid rgb(144, 255, 233) 4px;
+}
+
+.card-body{
+  padding: 16px;
+  background-color: white;
+  background: radial-gradient(white 70%, #dedede );
+  min-height: 22vh;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+@media (max-width: 480px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

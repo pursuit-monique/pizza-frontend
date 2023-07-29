@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import NavBar from "./NavBar";
+import MenuCards from "./MenuCards";
+import ItemPage from "./ItemPage";
+import Error from "./Error";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function FetchData() {
+      try {
+        setError("");
+        setLoading(true);
+        const res = await fetch("http://localhost:9000/itms/");
+        const json = await res.json();
+        const { data, error } = json;
+        if (res.ok) {
+          setItems(data);
+          setLoading(false);
+        } else {
+          setError(error);
+          setLoading(false);
+        }
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    }
+    FetchData();
+  }, []);
+
+  const renderContent = () => {
+    if (loading) {
+      return <Route path="/" element={<MenuCards items={items} />} />;
+    } else if (error) {
+      return <Route path="/" element={<Error error={error} />} />;
+    } else {
+      return <Route path="/" element={<MenuCards items={items} />} />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <div className="center">
+        <BrowserRouter>
+          <Routes>
+            {renderContent()}
+            <Route path="/item/:id" element={<ItemPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 
