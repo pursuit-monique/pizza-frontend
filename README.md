@@ -1,6 +1,5 @@
 # Pizza Frontend Assessment
 
-
 This is a Barbie-themed PERN pizza menu.
 
 Index page: 

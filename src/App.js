@@ -48,15 +48,13 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="center">
-        <BrowserRouter>
-          <Routes>
-            {renderContent()}
-            <Route path="/item/:id" element={<ItemPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          {renderContent()}
+          <Route path="/item/:id" element={<ItemPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

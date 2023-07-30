@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 const MenuCards = ({items}) =>{
     const [isHovered, setIsHovered] = useState(false);
-    console.log(items);
+ 
 
     return (
+        <div className="center">
         <div className="container">
         {items.map(item =>  (
             <Link to={`./item/${item.id}`}>
@@ -27,10 +28,9 @@ const MenuCards = ({items}) =>{
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         filter: isHovered === item.id ? "grayscale(0%) contrast(120%)" : "grayscale(100%) contrast(200%)", 
-                        transition: "filter 0.3s"
-                    }}>
+                        transition: "filter 0.3s"}}>
                         {" "}
-                </div>
+                    </div>
                 <div className="card-body">
                     <h3 className={isHovered === item.id ? 'linkActive' : 'link'}>
                         {item.name || "Loading"}
@@ -66,8 +66,9 @@ const MenuCards = ({items}) =>{
               </p>
             </div>
           </div>
+          
           </Link>))}
-        
+        </div>
         </div>
     )
 }
