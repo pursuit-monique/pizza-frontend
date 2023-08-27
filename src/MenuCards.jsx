@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const MenuCards = ({items}) =>{
+const MenuCards = ({items, setId}) =>{
     const [isHovered, setIsHovered] = useState(false);
- 
+    setId('');
 
     return (
         <div className="center">

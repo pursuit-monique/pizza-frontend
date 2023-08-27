@@ -1,7 +1,7 @@
 body {
   padding: 0px;
   margin: 0px;
-  background-color: linear-gradient(to bottom, rgb(255, 188, 225) 30%, rgb(102, 240, 240) 100%);
+  background: rgb(45, 33, 40);
   background-image: url('../public/images/background.jpg');
   background-size: cover;
   background-position: center;
@@ -67,6 +67,18 @@ body {
   position: sticky;
   top: 0;
 }
+
+.NavBarDark{
+  /* background: rgba(38, 36, 42, 1); */
+  /* background: black; */
+  background: rgba(20, 5, 15, 1);
+  backdrop-filter: blur(12px); 
+  color: hotpink;
+  z-index: 7;
+  position: sticky;
+  top: 0;
+}
+
 
 .footer{
   height: 8vh;

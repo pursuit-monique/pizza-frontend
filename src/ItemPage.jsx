@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './ItemPage.css';
 
-const ItemPage = () => {
+const ItemPage = ({setId}) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [item, setItem] = useState([])
     const { id } = useParams();
+    setId(id);
     useEffect( () =>{
         async function getOneMenuItem(id){
             try {
@@ -32,14 +33,13 @@ const ItemPage = () => {
         getOneMenuItem(id);
     }, [id])
 
-
+console.log(loading);
+console.log(error);
     return (
         <>
             <div>
                 <div className="show_container">
                     <div className="show_hero show_border" style={{
-                        height: "70vh",
-                        width: '70vw',
                         backgroundImage: `linear-gradient(to bottom, transparent 55%, black),
                         url(${
                         item.image ||

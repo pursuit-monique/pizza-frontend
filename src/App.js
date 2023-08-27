@@ -11,6 +11,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [id, setId] = useState("");
 
   useEffect(() => {
     async function FetchData() {
@@ -37,21 +38,25 @@ function App() {
 
   const renderContent = () => {
     if (loading) {
-      return <Route path="/" element={<MenuCards items={items} />} />;
+      return (
+        <Route path="/" element={<MenuCards setId={setId} items={items} />} />
+      );
     } else if (error) {
       return <Route path="/" element={<Error error={error} />} />;
     } else {
-      return <Route path="/" element={<MenuCards items={items} />} />;
+      return (
+        <Route path="/" element={<MenuCards setId={setId} items={items} />} />
+      );
     }
   };
 
   return (
     <>
-      <NavBar />
+      <NavBar id={id} />
       <BrowserRouter>
         <Routes>
           {renderContent()}
-          <Route path="/item/:id" element={<ItemPage />} />
+          <Route path="/item/:id" element={<ItemPage setId={setId} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
